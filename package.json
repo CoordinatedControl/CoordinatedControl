@@ -21,7 +21,8 @@
     "express": "^4.13.3",
     "opencv": "latest",
     "node-pid-controller": "latest",
-    "node-sumo": "git+https://github.com/forgeByAcision/node-sumo"
+    "node-sumo": "git+https://github.com/forgeByAcision/node-sumo",
+    "socket.io": "latest"
   },
   "engine": "node ^4.1.0",
   "maintainers": [
