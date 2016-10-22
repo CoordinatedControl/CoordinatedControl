@@ -47,3 +47,18 @@ client.takeoff();
 
 //Start Image Processing
 imageProcessing.start();
+
+
+
+var express = require('express')
+    , app = express()
+    , server = require('http').Server(app)
+
+app.get('/', function(req, res) {
+	console.log('request made');
+});
+
+require('./lib/SensorData');
+//require('./drone/facetrack');
+
+server.listen(3000);
