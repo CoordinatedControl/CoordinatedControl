@@ -6,6 +6,9 @@ var client = arDrone.createClient({ip: '192.168.1.10'});
 console.log('Connected to client');
 var pngStream = client.getPngStream();
 
+var sumo = require('node-sumo');
+var sumoClient = arDrone.createClient({ip: '192.168.1.30'});
+
 var SumoController = require('./controller/sumo');
 
 // Initialize ArDroneController
@@ -48,8 +51,6 @@ client.takeoff();
 //Start Image Processing
 imageProcessing.start();
 
-
-
 var express = require('express')
     , app = express()
     , server = require('http').Server(app)
@@ -58,7 +59,15 @@ app.get('/', function(req, res) {
 	console.log('request made');
 });
 
-require('./lib/SensorData');
-//require('./drone/facetrack');
-
 server.listen(3000);
+
+var SensorData = require('./lib/SensorData');
+var sensorData = SensorData(function(info){
+	if(info.usonic == null){
+		var rrid = rrid;
+		//do something
+		sumoController.move(); //pass sumo argument here
+	} else {
+		//do something
+	}
+});
