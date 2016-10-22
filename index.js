@@ -71,3 +71,5 @@ var sensorData = SensorData(function(info){
 		//do something
 	}
 });
+
+sensorData.receive();
